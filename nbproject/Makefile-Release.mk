@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/BezierCurve.o \
 	${OBJECTDIR}/Clipping.o \
 	${OBJECTDIR}/DisplayFile.o \
 	${OBJECTDIR}/GeometricObject.o \
@@ -68,6 +69,11 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cgtrabalho1-master: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cgtrabalho1-master ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/BezierCurve.o: BezierCurve.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/BezierCurve.o BezierCurve.cpp
 
 ${OBJECTDIR}/Clipping.o: Clipping.cpp 
 	${MKDIR} -p ${OBJECTDIR}

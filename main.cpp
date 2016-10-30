@@ -17,6 +17,7 @@
 #include "Line.h"
 #include "Point.h"
 #include "Clipping.h"
+#include "BezierCurve.h"
 
 /* +++++++++++++++++++++++++++++++ CONSTANTS ++++++++++++++++++++++++++++++++ */
 static const double MAIN_WINDOW_WIDTH = 800;
@@ -140,9 +141,17 @@ int main(int argc, char **argv) {
     Polygon polygon1("Polygon1",{Point(0.0, 0.0), Point(0.0, MAIN_WINDOW_HEIGHT / 2),
         Point(MAIN_WINDOW_WIDTH / 2, MAIN_WINDOW_HEIGHT / 2), Point(MAIN_WINDOW_WIDTH / 2, 0.0)});
 
+    Polygon bezierCurve1("bezierCurve1",{Point(10, 10), Point(10, MAIN_WINDOW_HEIGHT - 10),
+        Point(MAIN_WINDOW_WIDTH -10, MAIN_WINDOW_HEIGHT -10), Point(MAIN_WINDOW_WIDTH -10, 10)});
+
+    //    /* define ponstos para uma curva bezier */
+    //    BezierCurve bezierCurve1("BezierCurva1", {Point(0.0, 0.0), Point(0.0, MAIN_WINDOW_HEIGHT),
+    //            Point(MAIN_WINDOW_WIDTH, 0.0), Point(MAIN_WINDOW_WIDTH, MAIN_WINDOW_HEIGHT)});
+
     /* adiciona os objetos criados no DiplayFile */
     displayFile.addObject(line1);
     displayFile.addObject(polygon1);
+    displayFile.addObject(bezierCurve1);
     /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
 
@@ -829,7 +838,6 @@ static gboolean drawDisplayFiles(GtkWidget *widget, cairo_t *cr, gpointer data) 
     //std::vector<GeometricObject> clipedObjects = Clipping::clip(graficObjects, &window);
     Clipping clipper(graficObjects, &window);
     std::vector<GeometricObject> clipedObjects = clipper.clip();
-
 
     /* itera sobre todos os objetos que serão desenhados*/
     for (GeometricObject obj : clipedObjects) {

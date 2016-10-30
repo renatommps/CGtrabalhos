@@ -4,6 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Arquivos de Cabeçalho"
                    projectFiles="true">
+      <itemPath>BezierCurve.h</itemPath>
       <itemPath>Clipping.h</itemPath>
       <itemPath>DisplayFile.h</itemPath>
       <itemPath>GeometricObject.h</itemPath>
@@ -15,6 +16,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Arquivos de Código-Fonte"
                    projectFiles="true">
+      <itemPath>BezierCurve.cpp</itemPath>
       <itemPath>Clipping.cpp</itemPath>
       <itemPath>DisplayFile.cpp</itemPath>
       <itemPath>GeometricObject.cpp</itemPath>
@@ -60,6 +62,10 @@
           <commandLine>`pkg-config --libs gtk+-3.0`</commandLine>
         </linkerTool>
       </compileType>
+      <item path="BezierCurve.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BezierCurve.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Clipping.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Clipping.h" ex="false" tool="3" flavor2="0">
@@ -112,6 +118,10 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="BezierCurve.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BezierCurve.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Clipping.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Clipping.h" ex="false" tool="3" flavor2="0">
